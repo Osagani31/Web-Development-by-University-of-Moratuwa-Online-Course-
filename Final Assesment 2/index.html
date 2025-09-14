@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pet World</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header>
+    <h1>🐾 Welcome to Pet World 🐾</h1>
+    <nav>
+      <a href="#gallery">Gallery</a>
+      <a href="#list">Pet List</a>
+      <a href="#table">Pet Data</a>
+      <a href="#links">Useful Links</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <!-- Simple Animation -->
+  <div class="animated-text">We Love Pets!</div>
+
+  <!-- Gallery Section -->
+  <section id="gallery" class="gallery">
+    <img src="images/Puppy1.jpeg" alt="Puppy">
+    <img src="images/OIP.jpeg" alt="Kitten">
+    <img src="images/OIP (3).jpeg" alt="Bear">
+    <img src="images/OIP (1).jpeg" alt="Puppy 2">
+    
+  </section>
+
+  <!-- Unordered List -->
+  <section id="list">
+    <h2>Popular Pets</h2>
+    
+    <div class="pet-list-flex">
+      <img src="images/OIP (2).jpeg" alt="Kitten 2" class="pet-list-img">
+      <ul class="pet-list-items">
+        <li>Dogs</li>
+        <li>Cats</li>
+        <li>Birds</li>
+        <li>Rabbits</li>
+        <li>Fish</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Table -->
+  <section id="table">
+    <h2>Pet Information</h2>
+    <table>
+      <tr>
+        <th>Pet</th>
+        <th>Lifespan</th>
+        <th>Diet</th>
+      </tr>
+      <tr>
+        <td>Dog</td>
+        <td>10-13 years</td>
+        <td>Omnivore</td>
+      </tr>
+      <tr>
+        <td>Cat</td>
+        <td>12-18 years</td>
+        <td>Carnivore</td>
+      </tr>
+      <tr>
+        <td>Parrot</td>
+        <td>20-50 years</td>
+        <td>Herbivore</td>
+      </tr>
+    </table>
+  </section>
+
+  <!-- Hyperlinks -->
+  <section id="links">
+    <h2>Useful Pet Links</h2>
+    <ul>
+      <li><a href="https://www.aspca.org" target="_blank">ASPCA</a></li>
+      <li><a href="https://www.petfinder.com" target="_blank">Pet Finder</a></li>
+      <li><a href="https://www.petco.com" target="_blank">Petco</a></li>
+      <li><a href="https://www.purina.com" target="_blank">Purina</a></li>
+      <li><a href="https://en.wikipedia.org/wiki/Pet" target="_blank">Wikipedia - Pets</a></li>
+    </ul>
+  </section>
+
+  <!-- Contact + JS Function -->
+  <section id="contact">
+    <h2>Contact Us</h2>
+    <button onclick="showMessage()">Click Me</button>
+    <p id="message"></p>
+  </section>
+
+  <script src="script.js"></script>
+</body>
+</html>
