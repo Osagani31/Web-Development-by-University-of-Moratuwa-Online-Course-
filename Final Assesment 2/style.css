@@ -1,0 +1,361 @@
+/* ===== CSS RESET & VARIABLES ===== */
+:root {
+  --primary: #19d319;
+  --primary-dark: #285430;
+  --secondary: #4c956c;
+  --accent: #fefee3;
+  --light: #f8f9fa;
+  --dark: #2d3142;
+  --text: #333333;
+  --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  --transition: all 0.3s ease;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* ===== GENERAL STYLING ===== */
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.6;
+  background: var(--light);
+  color: var(--text);
+  text-align: center;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+section {
+  padding: 60px 0;
+}
+
+section:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+h1, h2, h3 {
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+h2 {
+  font-size: 2rem;
+  color: var(--primary);
+  position: relative;
+  padding-bottom: 15px;
+  margin-bottom: 30px;
+}
+
+h2::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 3px;
+  background: var(--secondary);
+}
+
+/* ===== HEADER & NAVIGATION ===== */
+header {
+  background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+  color: white;
+  padding: 25px 0;
+  box-shadow: var(--shadow);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.header-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+}
+
+nav {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  padding: 8px 16px;
+  border-radius: 4px;
+  transition: var(--transition);
+  position: relative;
+}
+
+nav a::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 0;
+  height: 2px;
+  background: var(--accent);
+  transition: var(--transition);
+  transform: translateX(-50%);
+}
+
+nav a:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+nav a:hover::after {
+  width: 80%;
+}
+
+/* ===== ANIMATED TEXT ===== */
+.animated-text {
+  margin: 40px 0;
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: var(--primary);
+  animation: fadeInUp 1s ease, pulse 2s infinite 1s;
+  padding: 15px 30px;
+  background: rgba(44, 110, 73, 0.1);
+  border-radius: 8px;
+  display: inline-block;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes pulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+}
+
+/* ===== GALLERY SECTION ===== */
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 25px;
+  padding: 30px;
+}
+
+.gallery img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 8px;
+  transition: var(--transition);
+  box-shadow: var(--shadow);
+}
+
+.gallery img:hover {
+  transform: translateY(-5px) scale(1.03);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* ===== LIST SECTION ===== */
+#list ul {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+#list li {
+  background: white;
+  padding: 15px 30px;
+  border-radius: 8px;
+  box-shadow: var(--shadow);
+  transition: var(--transition);
+  font-weight: 500;
+  position: relative;
+  overflow: hidden;
+}
+
+#list li::before {
+  content: '🐾';
+  margin-right: 8px;
+}
+
+#list li:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+  color: var(--primary);
+}
+
+/* ===== TABLE SECTION ===== */
+.table-container {
+  overflow-x: auto;
+  margin: 0 auto;
+  max-width: 800px;
+  box-shadow: var(--shadow);
+  border-radius: 8px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background: white;
+}
+
+th, td {
+  padding: 15px;
+  text-align: center;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+th {
+  background: var(--primary);
+  color: white;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: 0.9rem;
+}
+
+tr:nth-child(even) {
+  background-color: #f8f8f8;
+}
+
+tr:hover {
+  background-color: rgba(44, 110, 73, 0.05);
+}
+
+/* ===== LINKS SECTION ===== */
+#links ul {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 15px;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+#links li {
+  flex: 1;
+  min-width: 200px;
+}
+
+#links a {
+  display: block;
+  padding: 15px;
+  background: white;
+  color: var(--primary);
+  text-decoration: none;
+  border-radius: 8px;
+  transition: var(--transition);
+  box-shadow: var(--shadow);
+  font-weight: 500;
+}
+
+#links a:hover {
+  background: var(--primary);
+  color: white;
+  transform: translateY(-3px);
+}
+
+/* ===== CONTACT SECTION ===== */
+#contact {
+  padding-bottom: 80px;
+}
+
+button {
+  background: var(--primary);
+  color: white;
+  border: none;
+  padding: 12px 30px;
+  border-radius: 50px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--transition);
+  box-shadow: var(--shadow);
+}
+
+button:hover {
+  background: var(--primary-dark);
+  transform: translateY(-3px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+#message {
+  margin-top: 20px;
+  font-weight: 500;
+  color: var(--primary);
+  min-height: 24px;
+}
+
+/* ===== FOOTER ===== */
+footer {
+  background: var(--dark);
+  color: white;
+  padding: 30px 0;
+  margin-top: 40px;
+}
+
+/* ===== RESPONSIVE DESIGN ===== */
+@media (max-width: 768px) {
+  .header-content {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  nav {
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  nav a {
+    width: 100%;
+    text-align: center;
+  }
+  
+  .gallery {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 15px;
+    padding: 20px;
+  }
+  
+  h2 {
+    font-size: 1.8rem;
+  }
+}
+
+@media (max-width: 480px) {
+  h1 {
+    font-size: 1.8rem;
+  }
+  
+  h2 {
+    font-size: 1.5rem;
+  }
+  
+  .animated-text {
+    font-size: 1.5rem;
+  }
+  
+  #list ul, #links ul {
+    flex-direction: column;
+  }
+}
